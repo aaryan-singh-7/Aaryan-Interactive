@@ -1,3 +1,4 @@
 Netlify Forms redirect rule
 
 /contact /success.html 302
+/play /launch-day-defender.html 200

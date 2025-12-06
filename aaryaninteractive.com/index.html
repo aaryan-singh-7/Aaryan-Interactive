@@ -1,587 +1,520 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aaryan Interactive | App Development Agency</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-      :root {
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-      }
 
-      html {
-        scroll-behavior: smooth;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aaryan Interactive | Expert Flutter & AI App Development Agency</title>
+  <meta name="description"
+    content="Specialized mobile app development agency for startups. We build cross-platform iOS and Android apps using Flutter, AI, and Machine Learning. Get a free strategy call." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    }
 
-      body {
-        font-family: inherit;
-        background-color: #f3f4f6;
-        color: #1f2937;
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      .nav-blur {
-        backdrop-filter: blur(12px);
-        background: rgba(255, 255, 255, 0.85);
-      }
+    body {
+      font-family: inherit;
+      background-color: #f3f4f6;
+      color: #1f2937;
+    }
 
-      .menu-enter {
-        animation: fadeSlide 0.3s ease forwards;
-      }
+    .nav-blur {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.85);
+    }
 
-      @keyframes fadeSlide {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+    .menu-enter {
+      animation: fadeSlide 0.3s ease forwards;
+    }
 
-      .section-animate {
+    @keyframes fadeSlide {
+      from {
         opacity: 0;
-        transform: translateY(32px);
-        transition: opacity 0.65s ease, transform 0.65s ease;
+        transform: translateY(-10px);
       }
 
-      .section-in-view {
+      to {
         opacity: 1;
         transform: translateY(0);
       }
+    }
 
-      .section-flash {
-        animation: sectionFlash 0.9s ease;
+    .section-animate {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .section-in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-flash {
+      animation: sectionFlash 0.9s ease;
+    }
+
+    @keyframes sectionFlash {
+      0% {
+        box-shadow: 0 20px 45px rgba(75, 57, 239, 0);
       }
 
-      @keyframes sectionFlash {
-        0% {
-          box-shadow: 0 20px 45px rgba(75, 57, 239, 0);
-        }
-        50% {
-          box-shadow: 0 20px 55px rgba(75, 57, 239, 0.25);
-        }
-        100% {
-          box-shadow: 0 20px 45px rgba(75, 57, 239, 0);
-        }
+      50% {
+        box-shadow: 0 20px 55px rgba(75, 57, 239, 0.25);
       }
-    </style>
-  </head>
-  <body class="bg-[#F3F4F6]">
-    <div class="min-h-screen">
-      <!-- Navbar -->
-      <header class="section-animate sticky top-0 z-50 nav-blur border-b border-white/40 shadow-sm section-in-view">
-        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <div class="text-xl font-semibold text-[#1F2937]">
-            Aaryan <span class="text-[#4B39EF]">Interactive</span>
-          </div>
-          <nav class="hidden items-center gap-8 text-sm font-medium text-[#1F2937] md:flex">
-            <a
-              href="#services"
-              class="interactive-element transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]"
-              >Services</a
-            >
-            <a
-              href="#work"
-              class="interactive-element transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]"
-              >Work</a
-            >
-            <a
-              href="#about"
-              class="interactive-element transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]"
-              >About</a
-            >
-          </nav>
-          <div class="hidden md:block">
-            <a
-              href="#contact"
-              class="interactive-element rounded-full bg-[#4B39EF] px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-[#4B39EF]/30 transition duration-150 hover:shadow-[#4B39EF]/50 active:scale-[0.98]"
-              >Book Consultation</a
-            >
-          </div>
-          <button
-            id="menuToggle"
-            class="interactive-element md:hidden rounded-full border border-[#1F2937]/10 p-2 text-[#1F2937] transition duration-150 active:scale-[0.98]"
-            aria-label="Toggle menu"
-          >
-            <i data-lucide="menu" class="h-5 w-5"></i>
-          </button>
-        </div>
-        <div id="mobileMenu" class="hidden border-t border-white/50 bg-white/95 md:hidden">
-          <nav class="flex flex-col gap-4 px-6 py-4 text-sm font-medium text-[#1F2937]">
-            <a
-              href="#services"
-              class="interactive-element menu-enter transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]"
-              >Services</a
-            >
-            <a
-              href="#work"
-              class="interactive-element menu-enter transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]"
-              >Work</a
-            >
-            <a
-              href="#about"
-              class="interactive-element menu-enter transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]"
-              >About</a
-            >
-            <a
-              href="#contact"
-              class="interactive-element menu-enter rounded-full bg-[#4B39EF] px-5 py-2 text-center text-white transition duration-150 active:scale-[0.98]"
-              >Book Consultation</a
-            >
-          </nav>
-        </div>
-      </header>
 
-      <!-- Hero -->
-      <section
-        data-animate-section
-        class="section-animate relative overflow-hidden bg-white py-24"
-        style="--gradient: rgba(75, 57, 239, 0.1)"
-      >
-        <div class="absolute inset-0 bg-[#4B39EF]/5 blur-3xl"></div>
-        <div class="relative mx-auto max-w-6xl px-6">
-          <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
-            <div class="space-y-8">
-              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#4B39EF]">
-                Premium App Development Agency
-              </p>
-              <h1 class="text-4xl font-bold leading-tight text-[#1F2937] sm:text-5xl">
-                Turning Visionary Ideas into World-Class Mobile Apps.
-              </h1>
-              <p class="text-lg text-[#4B5563]">
-                Aaryan Interactive partners with businesses to build scalable,
-                beautiful iOS and Android solutions.
-              </p>
-              <div class="flex flex-col gap-4 sm:flex-row">
-                <a
-                  href="#contact"
-                  class="interactive-element rounded-full bg-[#4B39EF] px-6 py-3 text-center text-base font-semibold text-white shadow-lg shadow-[#4B39EF]/30 transition duration-150 hover:shadow-[#4B39EF]/50 active:scale-[0.98]"
-                  >Start Your Project</a
-                >
-                <a
-                  href="#work"
-                  class="interactive-element rounded-full border border-[#4B39EF] px-6 py-3 text-center text-base font-semibold text-[#4B39EF] transition duration-150 hover:bg-[#4B39EF]/5 active:scale-[0.98]"
-                  >View Portfolio</a
-                >
-              </div>
-              <div class="flex flex-wrap items-center gap-6 text-sm text-[#4B5563]">
-                <div>
-                  <p class="text-3xl font-bold text-[#1F2937]">120+</p>
-                  <p>Apps shipped</p>
-                </div>
-                <div>
-                  <p class="text-3xl font-bold text-[#1F2937]">40%</p>
-                  <p>Faster delivery</p>
-                </div>
-                <div>
-                  <p class="text-3xl font-bold text-[#1F2937]">4.9/5</p>
-                  <p>Client rating</p>
-                </div>
-              </div>
-            </div>
-            <!-- GRAPHIC PLACEHOLDER: Hero Visual - Replace with high-quality graphic representing "Visionary Ideas into World-Class Mobile Apps" with AI/ML concepts, such as abstract mobile app mockups, AI neural networks, or futuristic tech visualization -->
-            <div class="relative h-96 rounded-3xl bg-[#4B39EF]/10 p-6">
-              <div class="relative h-full flex items-center justify-center">
-                <div class="text-center">
-                  <i data-lucide="zap" class="h-16 w-16 mx-auto text-[#4B39EF] mb-4"></i>
-                  <p class="text-xl font-bold text-[#1F2937]">Your Idea. Visualized.</p>
-                  <p class="text-[#4B5563]">Custom Graphic Goes Here.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      100% {
+        box-shadow: 0 20px 45px rgba(75, 57, 239, 0);
+      }
+    }
+  </style>
+</head>
 
-      <!-- Services -->
-      <section id="services" data-animate-section class="bg-[#F3F4F6] py-24 section-animate">
-        <div class="mx-auto max-w-6xl px-6">
-          <div class="mb-12 flex flex-col gap-4 text-center">
+<body class="bg-[#F3F4F6]">
+  <div class="min-h-screen">
+    <!-- Navbar -->
+    <header class="section-animate sticky top-0 z-50 nav-blur border-b border-white/40 shadow-sm section-in-view">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <div class="text-xl font-semibold text-[#1F2937]">
+          Aaryan <span class="text-[#4B39EF]">Interactive</span>
+        </div>
+        <nav class="hidden items-center gap-8 text-sm font-medium text-[#1F2937] md:flex">
+          <a href="#services"
+            class="interactive-element transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]">Services</a>
+          <a href="#work"
+            class="interactive-element transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]">Work</a>
+          <a href="#about"
+            class="interactive-element transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]">About</a>
+          <a href="/play"
+            class="interactive-element transition duration-150 active:scale-[0.98] hover:text-[#4B39EF] font-semibold text-[#4B39EF]">Play
+            Game</a>
+        </nav>
+        <div class="hidden md:block">
+          <a href="#contact"
+            class="interactive-element rounded-full bg-[#4B39EF] px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-[#4B39EF]/30 transition duration-150 hover:shadow-[#4B39EF]/50 active:scale-[0.98]">Book
+            Consultation</a>
+        </div>
+        <button id="menuToggle"
+          class="interactive-element md:hidden rounded-full border border-[#1F2937]/10 p-2 text-[#1F2937] transition duration-150 active:scale-[0.98]"
+          aria-label="Toggle menu">
+          <i data-lucide="menu" class="h-5 w-5"></i>
+        </button>
+      </div>
+      <div id="mobileMenu" class="hidden border-t border-white/50 bg-white/95 md:hidden">
+        <nav class="flex flex-col gap-4 px-6 py-4 text-sm font-medium text-[#1F2937]">
+          <a href="#services"
+            class="interactive-element menu-enter transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]">Services</a>
+          <a href="#work"
+            class="interactive-element menu-enter transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]">Work</a>
+          <a href="#about"
+            class="interactive-element menu-enter transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]">About</a>
+          <a href="/play"
+            class="interactive-element menu-enter transition duration-150 active:scale-[0.98] hover:text-[#4B39EF] font-semibold text-[#4B39EF]">Play
+            Game</a>
+          <a href="#contact"
+            class="interactive-element menu-enter rounded-full bg-[#4B39EF] px-5 py-2 text-center text-white transition duration-150 active:scale-[0.98]">Book
+            Consultation</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section data-animate-section class="section-animate relative overflow-hidden bg-white py-24"
+      style="--gradient: rgba(75, 57, 239, 0.1)">
+      <div class="absolute inset-0 bg-[#4B39EF]/5 blur-3xl"></div>
+      <div class="relative mx-auto max-w-6xl px-6">
+        <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
+          <div class="space-y-8">
             <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#4B39EF]">
-              Capabilities
+              Premium App Development Agency
             </p>
-            <h2 class="text-3xl font-bold text-[#1F2937]">Services engineered for growth</h2>
-            <p class="text-base text-[#4B5563]">
-              End-to-end product teams building future-ready digital experiences.
+            <h1 class="text-4xl font-bold leading-tight text-[#1F2937] sm:text-5xl">
+              Turning Visionary Ideas into World-Class Mobile Apps.
+            </h1>
+            <p class="text-lg text-[#4B5563]">
+              Aaryan Interactive partners with businesses to build scalable,
+              beautiful iOS and Android solutions.
             </p>
+            <div class="flex flex-col gap-4 sm:flex-row">
+              <a href="#contact"
+                class="interactive-element rounded-full bg-[#4B39EF] px-6 py-3 text-center text-base font-semibold text-white shadow-lg shadow-[#4B39EF]/30 transition duration-150 hover:shadow-[#4B39EF]/50 active:scale-[0.98]">Start
+                Your Project</a>
+              <a href="#work"
+                class="interactive-element rounded-full border border-[#4B39EF] px-6 py-3 text-center text-base font-semibold text-[#4B39EF] transition duration-150 hover:bg-[#4B39EF]/5 active:scale-[0.98]">View
+                Portfolio</a>
+            </div>
+            <div class="flex flex-wrap items-center gap-6 text-sm text-[#4B5563]">
+              <div>
+                <p class="text-3xl font-bold text-[#1F2937]">120+</p>
+                <p>Apps shipped</p>
+              </div>
+              <div>
+                <p class="text-3xl font-bold text-[#1F2937]">40%</p>
+                <p>Faster delivery</p>
+              </div>
+              <div>
+                <p class="text-3xl font-bold text-[#1F2937]">4.9/5</p>
+                <p>Client rating</p>
+              </div>
+            </div>
           </div>
-          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <article
-              class="interactive-element rounded-3xl bg-white p-6 shadow-lg shadow-[#4B39EF]/5 transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98]"
-            >
-              <div class="mb-4 inline-flex rounded-2xl bg-[#4B39EF]/10 p-3 text-[#4B39EF]">
-                <i data-lucide="apple" class="h-5 w-5"></i>
+          <!-- GRAPHIC PLACEHOLDER: Hero Visual - Replace with high-quality graphic representing "Visionary Ideas into World-Class Mobile Apps" with AI/ML concepts, such as abstract mobile app mockups, AI neural networks, or futuristic tech visualization -->
+          <div class="relative h-96 rounded-3xl bg-[#4B39EF]/10 p-6">
+            <div class="relative h-full flex items-center justify-center">
+              <div class="text-center">
+                <i data-lucide="zap" class="h-16 w-16 mx-auto text-[#4B39EF] mb-4"></i>
+                <p class="text-xl font-bold text-[#1F2937]">Your Idea. Visualized.</p>
+                <p class="text-[#4B5563]">Custom Graphic Goes Here.</p>
               </div>
-              <h3 class="text-xl font-semibold text-[#1F2937]">iOS Development</h3>
-              <p class="mt-3 text-sm text-[#6B7280]">
-                Native Swift and SwiftUI apps built for premium Apple experiences.
-              </p>
-            </article>
-            <article
-              class="interactive-element rounded-3xl bg-white p-6 shadow-lg shadow-[#4B39EF]/5 transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98]"
-            >
-              <div class="mb-4 inline-flex rounded-2xl bg-[#4B39EF]/10 p-3 text-[#4B39EF]">
-                <i data-lucide="smartphone-charging" class="h-5 w-5"></i>
-              </div>
-              <h3 class="text-xl font-semibold text-[#1F2937]">Android Development</h3>
-              <p class="mt-3 text-sm text-[#6B7280]">
-                High-performance Kotlin apps that feel right at home on Android.
-              </p>
-            </article>
-            <article
-              class="interactive-element rounded-3xl bg-white p-6 shadow-lg shadow-[#4B39EF]/5 transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98]"
-            >
-              <div class="mb-4 inline-flex rounded-2xl bg-[#4B39EF]/10 p-3 text-[#4B39EF]">
-                <i data-lucide="layers" class="h-5 w-5"></i>
-              </div>
-              <h3 class="text-xl font-semibold text-[#1F2937]">Cross-Platform</h3>
-              <p class="mt-3 text-sm text-[#6B7280]">
-                Ship faster with React Native and Flutter without compromising quality.
-              </p>
-            </article>
-            <article
-              class="interactive-element rounded-3xl bg-white p-6 shadow-lg shadow-[#4B39EF]/5 transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98]"
-            >
-              <div class="mb-4 inline-flex rounded-2xl bg-[#4B39EF]/10 p-3 text-[#4B39EF]">
-                <i data-lucide="palette" class="h-5 w-5"></i>
-              </div>
-              <h3 class="text-xl font-semibold text-[#1F2937]">UI/UX Design</h3>
-              <p class="mt-3 text-sm text-[#6B7280]">
-                Research-led design systems and prototypes that convert users.
-              </p>
-            </article>
-            <article
-              class="interactive-element rounded-3xl bg-white p-6 shadow-lg shadow-[#4B39EF]/5 transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98]"
-            >
-              <div class="mb-4 inline-flex rounded-2xl bg-[#4B39EF]/10 p-3 text-[#4B39EF]">
-                <i data-lucide="globe" class="h-5 w-5"></i>
-              </div>
-              <h3 class="text-xl font-semibold text-[#1F2937]">Web App Development</h3>
-              <p class="mt-3 text-sm text-[#6B7280]">
-                Progressive web apps and admin tools that scale with your business.
-              </p>
-            </article>
-            <article
-              class="interactive-element rounded-3xl bg-white p-6 shadow-lg shadow-[#4B39EF]/5 transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98]"
-            >
-              <div class="mb-4 inline-flex rounded-2xl bg-[#4B39EF]/10 p-3 text-[#4B39EF]">
-                <i data-lucide="target" class="h-5 w-5"></i>
-              </div>
-              <h3 class="text-xl font-semibold text-[#1F2937]">Product Strategy</h3>
-              <p class="mt-3 text-sm text-[#6B7280]">
-                GTM roadmaps, analytics, and QA to keep launches on time and on target.
-              </p>
-            </article>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Featured Work -->
-      <section id="work" data-animate-section class="bg-white py-24 section-animate">
-        <div class="mx-auto max-w-6xl px-6">
-          <div class="mb-12 flex flex-col gap-4 text-center">
+
+
+    <!-- Services -->
+    <section id="services" data-animate-section class="bg-[#F3F4F6] py-12 section-animate">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-12 flex flex-col gap-4 text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#4B39EF]">
+            Capabilities
+          </p>
+          <h2 class="text-3xl font-bold text-[#1F2937]">Services engineered for growth</h2>
+          <p class="text-base text-[#4B5563]">
+            End-to-end product teams building future-ready digital experiences.
+          </p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article
+            class="interactive-element rounded-3xl bg-white p-6 shadow-lg shadow-[#4B39EF]/5 transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98]">
+            <div class="mb-4 inline-flex rounded-2xl bg-[#4B39EF]/10 p-3 text-[#4B39EF]">
+              <i data-lucide="apple" class="h-5 w-5"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-[#1F2937]">iOS Development</h3>
+            <p class="mt-3 text-sm text-[#6B7280]">
+              Native Swift and SwiftUI apps built for premium Apple experiences.
+            </p>
+          </article>
+          <article
+            class="interactive-element rounded-3xl bg-white p-6 shadow-lg shadow-[#4B39EF]/5 transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98]">
+            <div class="mb-4 inline-flex rounded-2xl bg-[#4B39EF]/10 p-3 text-[#4B39EF]">
+              <i data-lucide="smartphone-charging" class="h-5 w-5"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-[#1F2937]">Android Development</h3>
+            <p class="mt-3 text-sm text-[#6B7280]">
+              High-performance Kotlin apps that feel right at home on Android.
+            </p>
+          </article>
+          <article
+            class="interactive-element rounded-3xl bg-white p-6 shadow-lg shadow-[#4B39EF]/5 transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98]">
+            <div class="mb-4 inline-flex rounded-2xl bg-[#4B39EF]/10 p-3 text-[#4B39EF]">
+              <i data-lucide="layers" class="h-5 w-5"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-[#1F2937]">Cross-Platform</h3>
+            <p class="mt-3 text-sm text-[#6B7280]">
+              Ship faster with React Native and Flutter without compromising quality.
+            </p>
+          </article>
+          <article
+            class="interactive-element rounded-3xl bg-white p-6 shadow-lg shadow-[#4B39EF]/5 transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98]">
+            <div class="mb-4 inline-flex rounded-2xl bg-[#4B39EF]/10 p-3 text-[#4B39EF]">
+              <i data-lucide="palette" class="h-5 w-5"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-[#1F2937]">UI/UX Design</h3>
+            <p class="mt-3 text-sm text-[#6B7280]">
+              Research-led design systems and prototypes that convert users.
+            </p>
+          </article>
+          <article
+            class="interactive-element rounded-3xl bg-white p-6 shadow-lg shadow-[#4B39EF]/5 transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98]">
+            <div class="mb-4 inline-flex rounded-2xl bg-[#4B39EF]/10 p-3 text-[#4B39EF]">
+              <i data-lucide="globe" class="h-5 w-5"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-[#1F2937]">Web App Development</h3>
+            <p class="mt-3 text-sm text-[#6B7280]">
+              Progressive web apps and admin tools that scale with your business.
+            </p>
+          </article>
+          <article
+            class="interactive-element rounded-3xl bg-white p-6 shadow-lg shadow-[#4B39EF]/5 transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98]">
+            <div class="mb-4 inline-flex rounded-2xl bg-[#4B39EF]/10 p-3 text-[#4B39EF]">
+              <i data-lucide="target" class="h-5 w-5"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-[#1F2937]">Product Strategy</h3>
+            <p class="mt-3 text-sm text-[#6B7280]">
+              GTM roadmaps, analytics, and QA to keep launches on time and on target.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Work -->
+    <section id="work" data-animate-section class="bg-white py-24 section-animate">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-12 flex flex-col gap-4 text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#4B39EF]">
+            Featured Work
+          </p>
+          <h2 class="text-3xl font-bold text-[#1F2937]">Apps built for category leaders</h2>
+          <p class="text-base text-[#4B5563]">
+            We design and engineer products that raise the bar across industries.
+          </p>
+        </div>
+        <div class="grid gap-8 md:grid-cols-3">
+          <a href="https://play.google.com/store/apps/details?id=com.mycompany.lookboostai" target="_blank"
+            rel="noopener noreferrer"
+            class="interactive-element rounded-3xl border border-[#E5E7EB] bg-gradient-to-br from-[#E0E7FF] to-white p-6 shadow-lg transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98] block">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#4B39EF]">AI/ML</span>
+              <!-- GRAPHIC PLACEHOLDER: LookBoost AI - Add app screenshot or icon showing AI face analysis interface with facial feature scoring visualization -->
+              <div class="flex gap-2">
+                <i data-lucide="smile" class="h-5 w-5 text-[#4B39EF]"></i>
+                <i data-lucide="store" class="h-5 w-5 text-[#4B39EF]"></i>
+              </div>
+            </div>
+            <h3 class="mt-6 text-xl font-semibold text-[#1F2937]">
+              LookBoost AI
+            </h3>
+            <p class="mt-3 text-sm text-[#6B7280]">
+              AI face analyzer delivering detailed feature scores and tailored recommendations.
+            </p>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.aaryaninteractive.founderhub&pcampaignid=web_share"
+            target="_blank" rel="noopener noreferrer"
+            class="interactive-element rounded-3xl border border-[#E5E7EB] bg-gradient-to-br from-[#C7F9CC] to-white p-6 shadow-lg transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98] block">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#4B39EF]">Incubation</span>
+              <!-- GRAPHIC PLACEHOLDER: Founder Central - Add app screenshot or icon showing startup incubator dashboard with networking features, pitch decks, or VC connection interface -->
+              <div class="flex gap-2">
+                <i data-lucide="rocket" class="h-5 w-5 text-[#4B39EF]"></i>
+                <i data-lucide="store" class="h-5 w-5 text-[#4B39EF]"></i>
+              </div>
+            </div>
+            <h3 class="mt-6 text-xl font-semibold text-[#1F2937]">
+              Founder Central
+            </h3>
+            <p class="mt-3 text-sm text-[#6B7280]">
+              Startup incubator platform uniting entrepreneurs, founders, and VCs in one hub.
+            </p>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.aaryaninteractive.indianeasy&pcampaignid=web_share"
+            target="_blank" rel="noopener noreferrer"
+            class="interactive-element rounded-3xl border border-[#E5E7EB] bg-gradient-to-br from-[#FFE5D9] to-white p-6 shadow-lg transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98] block">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#4B39EF]">Culinary Tech</span>
+              <!-- GRAPHIC PLACEHOLDER: Easy Indian AI - Add app screenshot or icon showing recipe interface with regional Indian dishes, step-by-step cooking visuals, or ingredient visualization -->
+              <div class="flex gap-2">
+                <i data-lucide="chef-hat" class="h-5 w-5 text-[#4B39EF]"></i>
+                <i data-lucide="store" class="h-5 w-5 text-[#4B39EF]"></i>
+              </div>
+            </div>
+            <h3 class="mt-6 text-xl font-semibold text-[#1F2937]">
+              Easy Indian AI
+            </h3>
+            <p class="mt-3 text-sm text-[#6B7280]">
+              Indian recipe generator with regional coverage and interactive visual guides.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" data-animate-section class="bg-[#4B39EF] py-24 text-white section-animate">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="grid gap-10 md:grid-cols-[1.1fr,0.9fr] md:items-center">
+          <div class="space-y-5">
+            <img src="images/Aaryan%20Coat.jpg" alt="Aaryan Interactive Agency Logo"
+              class="h-24 w-24 mb-6 rounded-full object-cover" />
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
+              Meet the Founder
+            </p>
+            <h2 class="text-3xl font-bold">Aaryan Singh</h2>
+            <p class="text-lg text-white/80">
+              "We exist to give ambitious teams a product partner that obsesses over
+              user experience, performance, and velocity. Every engagement is built on
+              trust and measurable outcomes."
+            </p>
+            <div class="flex flex-wrap gap-4 text-sm text-white/80">
+              <div class="rounded-2xl border border-white/30 px-4 py-2">
+                AI ML Course, IIT Guwahati
+              </div>
+              <div class="rounded-2xl border border-white/30 px-4 py-2">
+                7+ Years Mobile & Web Development Expertise
+              </div>
+              <div class="rounded-2xl border border-white/30 px-4 py-2">
+                Dedicated to AI-Driven Solutions
+              </div>
+            </div>
+          </div>
+          <div class="rounded-3xl border border-white/20 bg-white/10 p-8 shadow-xl shadow-[#1F2937]/20">
+            <h3 class="text-xl font-semibold">How we partner</h3>
+            <ul class="mt-6 space-y-4 text-sm text-white/80">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="h-5 w-5 text-white"></i>
+                <span>Dedicated squads across strategy, design, engineering, QA.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="h-5 w-5 text-white"></i>
+                <span>Transparent sprints with weekly demos and live dashboards.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="h-5 w-5 text-white"></i>
+                <span>Security-first approach meeting enterprise compliance.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" data-animate-section class="bg-[#F3F4F6] py-24 section-animate">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="grid gap-10 lg:grid-cols-[1fr,0.8fr]">
+          <div>
             <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#4B39EF]">
-              Featured Work
+              Contact
             </p>
-            <h2 class="text-3xl font-bold text-[#1F2937]">Apps built for category leaders</h2>
-            <p class="text-base text-[#4B5563]">
-              We design and engineer products that raise the bar across industries.
+            <h2 class="mt-4 text-3xl font-bold text-[#1F2937]">
+              Tell us about your next big idea.
+            </h2>
+            <p class="mt-4 text-base text-[#4B5563]">
+              We reply within 24 hours. Prefer email? Reach us at
+              <a href="mailto:aaryaninteractive@gmail.com"
+                class="interactive-element text-[#4B39EF] underline transition duration-150 active:scale-[0.98]">aaryaninteractive@gmail.com</a>.
             </p>
-          </div>
-          <div class="grid gap-8 md:grid-cols-3">
-            <a
-              href="https://play.google.com/store/apps/details?id=com.mycompany.lookboostai"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="interactive-element rounded-3xl border border-[#E5E7EB] bg-gradient-to-br from-[#E0E7FF] to-white p-6 shadow-lg transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98] block"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#4B39EF]"
-                  >AI/ML</span
-                >
-                <!-- GRAPHIC PLACEHOLDER: LookBoost AI - Add app screenshot or icon showing AI face analysis interface with facial feature scoring visualization -->
-                <div class="flex gap-2">
-                  <i data-lucide="smile" class="h-5 w-5 text-[#4B39EF]"></i>
-                  <i data-lucide="store" class="h-5 w-5 text-[#4B39EF]"></i>
-                </div>
+            <div class="mt-8 space-y-4 text-sm text-[#4B5563]">
+              <div
+                class="interactive-element flex items-center gap-3 rounded-2xl bg-white p-3 text-[#4B39EF] shadow-sm transition duration-150 active:scale-[0.98]">
+                <i data-lucide="map-pin" class="h-5 w-5"></i>
+                <span class="text-[#1F2937]">Global Delivery · Remote-first</span>
               </div>
-              <h3 class="mt-6 text-xl font-semibold text-[#1F2937]">
-                LookBoost AI
-              </h3>
-              <p class="mt-3 text-sm text-[#6B7280]">
-                AI face analyzer delivering detailed feature scores and tailored recommendations.
-              </p>
-            </a>
-            <a
-              href="https://play.google.com/store/apps/details?id=com.aaryaninteractive.founderhub&pcampaignid=web_share"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="interactive-element rounded-3xl border border-[#E5E7EB] bg-gradient-to-br from-[#C7F9CC] to-white p-6 shadow-lg transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98] block"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#4B39EF]"
-                  >Incubation</span
-                >
-                <!-- GRAPHIC PLACEHOLDER: Founder Central - Add app screenshot or icon showing startup incubator dashboard with networking features, pitch decks, or VC connection interface -->
-                <div class="flex gap-2">
-                  <i data-lucide="rocket" class="h-5 w-5 text-[#4B39EF]"></i>
-                  <i data-lucide="store" class="h-5 w-5 text-[#4B39EF]"></i>
-                </div>
+              <div
+                class="interactive-element flex items-center gap-3 rounded-2xl bg-white p-3 text-[#4B39EF] shadow-sm transition duration-150 active:scale-[0.98]">
+                <i data-lucide="phone" class="h-5 w-5"></i>
+                <span class="text-[#1F2937]">+91 7007532566</span>
               </div>
-              <h3 class="mt-6 text-xl font-semibold text-[#1F2937]">
-                Founder Central
-              </h3>
-              <p class="mt-3 text-sm text-[#6B7280]">
-                Startup incubator platform uniting entrepreneurs, founders, and VCs in one hub.
-              </p>
-            </a>
-            <a
-              href="https://play.google.com/store/apps/details?id=com.aaryaninteractive.indianeasy&pcampaignid=web_share"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="interactive-element rounded-3xl border border-[#E5E7EB] bg-gradient-to-br from-[#FFE5D9] to-white p-6 shadow-lg transition duration-150 hover:-translate-y-1 hover:rotate-1 hover:shadow-xl active:scale-[0.98] block"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#4B39EF]"
-                  >Culinary Tech</span
-                >
-                <!-- GRAPHIC PLACEHOLDER: Easy Indian AI - Add app screenshot or icon showing recipe interface with regional Indian dishes, step-by-step cooking visuals, or ingredient visualization -->
-                <div class="flex gap-2">
-                  <i data-lucide="chef-hat" class="h-5 w-5 text-[#4B39EF]"></i>
-                  <i data-lucide="store" class="h-5 w-5 text-[#4B39EF]"></i>
+              <div class="flex items-center gap-3">
+                <div
+                  class="interactive-element rounded-2xl bg-white p-3 text-[#4B39EF] shadow-sm transition duration-150 active:scale-[0.98]">
+                  <i data-lucide="linkedin" class="h-5 w-5"></i>
                 </div>
-              </div>
-              <h3 class="mt-6 text-xl font-semibold text-[#1F2937]">
-                Easy Indian AI
-              </h3>
-              <p class="mt-3 text-sm text-[#6B7280]">
-                Indian recipe generator with regional coverage and interactive visual guides.
-              </p>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- About -->
-      <section id="about" data-animate-section class="bg-[#4B39EF] py-24 text-white section-animate">
-        <div class="mx-auto max-w-6xl px-6">
-          <div class="grid gap-10 md:grid-cols-[1.1fr,0.9fr] md:items-center">
-            <div class="space-y-5">
-              <img
-                src="images/Aaryan%20Coat.jpg"
-                alt="Aaryan Interactive Agency Logo"
-                class="h-24 w-24 mb-6 rounded-full object-cover"
-              />
-              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
-                Meet the Founder
-              </p>
-              <h2 class="text-3xl font-bold">Aaryan Singh</h2>
-              <p class="text-lg text-white/80">
-                "We exist to give ambitious teams a product partner that obsesses over
-                user experience, performance, and velocity. Every engagement is built on
-                trust and measurable outcomes."
-              </p>
-              <div class="flex flex-wrap gap-4 text-sm text-white/80">
-                <div class="rounded-2xl border border-white/30 px-4 py-2">
-                  AI ML Course, IIT Guwahati
-                </div>
-                <div class="rounded-2xl border border-white/30 px-4 py-2">
-                  7+ Years Mobile & Web Development Expertise
-                </div>
-                <div class="rounded-2xl border border-white/30 px-4 py-2">
-                  Dedicated to AI-Driven Solutions
-                </div>
+                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"
+                  class="interactive-element font-semibold text-[#1F2937] transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]">Connect
+                  on LinkedIn</a>
               </div>
             </div>
-            <div class="rounded-3xl border border-white/20 bg-white/10 p-8 shadow-xl shadow-[#1F2937]/20">
-              <h3 class="text-xl font-semibold">How we partner</h3>
-              <ul class="mt-6 space-y-4 text-sm text-white/80">
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle" class="h-5 w-5 text-white"></i>
-                  <span>Dedicated squads across strategy, design, engineering, QA.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle" class="h-5 w-5 text-white"></i>
-                  <span>Transparent sprints with weekly demos and live dashboards.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle" class="h-5 w-5 text-white"></i>
-                  <span>Security-first approach meeting enterprise compliance.</span>
-                </li>
-              </ul>
-            </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Contact -->
-      <section id="contact" data-animate-section class="bg-[#F3F4F6] py-24 section-animate">
-        <div class="mx-auto max-w-6xl px-6">
-          <div class="grid gap-10 lg:grid-cols-[1fr,0.8fr]">
-            <div>
-              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#4B39EF]">
-                Contact
-              </p>
-              <h2 class="mt-4 text-3xl font-bold text-[#1F2937]">
-                Tell us about your next big idea.
-              </h2>
-              <p class="mt-4 text-base text-[#4B5563]">
-                We reply within 24 hours. Prefer email? Reach us at
-                <a
-                  href="mailto:aaryaninteractive@gmail.com"
-                  class="interactive-element text-[#4B39EF] underline transition duration-150 active:scale-[0.98]"
-                  >aaryaninteractive@gmail.com</a
-                >.
-              </p>
-              <div class="mt-8 space-y-4 text-sm text-[#4B5563]">
-                <div class="interactive-element flex items-center gap-3 rounded-2xl bg-white p-3 text-[#4B39EF] shadow-sm transition duration-150 active:scale-[0.98]">
-                  <i data-lucide="map-pin" class="h-5 w-5"></i>
-                  <span class="text-[#1F2937]">Global Delivery · Remote-first</span>
-                </div>
-                <div class="interactive-element flex items-center gap-3 rounded-2xl bg-white p-3 text-[#4B39EF] shadow-sm transition duration-150 active:scale-[0.98]">
-                  <i data-lucide="phone" class="h-5 w-5"></i>
-                  <span class="text-[#1F2937]">+91 7007532566</span>
-                </div>
-                <div class="flex items-center gap-3">
-                  <div class="interactive-element rounded-2xl bg-white p-3 text-[#4B39EF] shadow-sm transition duration-150 active:scale-[0.98]">
-                    <i data-lucide="linkedin" class="h-5 w-5"></i>
-                  </div>
-                  <a
-                    href="https://www.linkedin.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    class="interactive-element font-semibold text-[#1F2937] transition duration-150 active:scale-[0.98] hover:text-[#4B39EF]"
-                    >Connect on LinkedIn</a
-                  >
-                </div>
+          <!-- FORM START: Netlify Configuration -->
+          <form name="contact" method="POST" data-netlify="true" action="/contact"
+            class="rounded-3xl bg-white p-8 shadow-xl shadow-[#4B39EF]/10">
+            <!-- Required for Netlify to recognize the form -->
+            <input type="hidden" name="form-name" value="contact" />
+
+            <div class="space-y-6">
+              <div>
+                <label class="text-sm font-semibold text-[#1F2937]" for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Your full name"
+                  class="mt-2 w-full rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm transition focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#4B39EF]"
+                  required />
               </div>
+              <div>
+                <label class="text-sm font-semibold text-[#1F2937]" for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="you@company.com"
+                  class="mt-2 w-full rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm transition focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#4B39EF]"
+                  required />
+              </div>
+              <div>
+                <label class="text-sm font-semibold text-[#1F2937]" for="message">Project Idea</label>
+                <textarea name="message" id="message" rows="4" placeholder="Tell us what you're building"
+                  class="mt-2 w-full rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm transition focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#4B39EF]"
+                  required></textarea>
+              </div>
+              <button type="submit"
+                class="interactive-element w-full rounded-full bg-[#4B39EF] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-[#4B39EF]/30 transition duration-150 hover:shadow-[#4B39EF]/50 active:scale-[0.98]">
+                Send Message
+              </button>
             </div>
-
-            <!-- FORM START: Netlify Configuration -->
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              action="/contact"
-              class="rounded-3xl bg-white p-8 shadow-xl shadow-[#4B39EF]/10"
-            >
-              <!-- Required for Netlify to recognize the form -->
-              <input type="hidden" name="form-name" value="contact" />
-
-              <div class="space-y-6">
-                <div>
-                  <label class="text-sm font-semibold text-[#1F2937]" for="name">Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Your full name"
-                    class="mt-2 w-full rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm transition focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#4B39EF]"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="text-sm font-semibold text-[#1F2937]" for="email">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="you@company.com"
-                    class="mt-2 w-full rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm transition focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#4B39EF]"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="text-sm font-semibold text-[#1F2937]" for="message">Project Idea</label>
-                  <textarea
-                    name="message"
-                    id="message"
-                    rows="4"
-                    placeholder="Tell us what you're building"
-                    class="mt-2 w-full rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm transition focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#4B39EF]"
-                    required
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  class="interactive-element w-full rounded-full bg-[#4B39EF] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-[#4B39EF]/30 transition duration-150 hover:shadow-[#4B39EF]/50 active:scale-[0.98]"
-                >
-                  Send Message
-                </button>
-              </div>
-            </form>
-            <!-- FORM END -->
-          </div>
+          </form>
+          <!-- FORM END -->
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Footer -->
-      <footer class="bg-white py-10">
-        <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-center text-sm text-[#6B7280] md:flex-row">
-          <p>© <span id="year"></span> Aaryan Interactive. All rights reserved.</p>
-          <p>Founder: Aaryan Singh</p>
-        </div>
-      </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-white py-10">
+      <div
+        class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-center text-sm text-[#6B7280] md:flex-row">
+        <p>© <span id="year"></span> Aaryan Interactive. All rights reserved.</p>
+        <p>Founder: Aaryan Singh</p>
+      </div>
+    </footer>
+  </div>
 
-    <script>
-      const menuToggle = document.getElementById("menuToggle");
-      const mobileMenu = document.getElementById("mobileMenu");
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-      menuToggle?.addEventListener("click", () => {
-        const isOpen = mobileMenu.classList.contains("hidden");
-        mobileMenu.classList.toggle("hidden");
-        menuToggle.innerHTML = "";
-        const icon = document.createElement("i");
-        icon.setAttribute("data-lucide", isOpen ? "x" : "menu");
-        icon.classList.add("h-5", "w-5");
-        menuToggle.appendChild(icon);
-        lucide.createIcons();
-      });
+    menuToggle?.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      menuToggle.innerHTML = "";
+      const icon = document.createElement("i");
+      icon.setAttribute("data-lucide", isOpen ? "x" : "menu");
+      icon.classList.add("h-5", "w-5");
+      menuToggle.appendChild(icon);
+      lucide.createIcons();
+    });
 
-      const animatedSections = document.querySelectorAll("[data-animate-section]");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("section-in-view");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
+    const animatedSections = document.querySelectorAll("[data-animate-section]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("section-in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
 
-      animatedSections.forEach((section) => observer.observe(section));
+    animatedSections.forEach((section) => observer.observe(section));
 
-      const navLinks = document.querySelectorAll('a[href^="#"]');
+    const navLinks = document.querySelectorAll('a[href^="#"]');
 
-      navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          const targetId = link.getAttribute("href")?.replace("#", "");
-          if (!targetId) return;
-          const targetSection = document.getElementById(targetId);
-          if (!targetSection) return;
-          targetSection.classList.remove("section-flash");
-          requestAnimationFrame(() => {
-            targetSection.classList.add("section-flash");
-            setTimeout(() => targetSection.classList.remove("section-flash"), 900);
-          });
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        const targetId = link.getAttribute("href")?.replace("#", "");
+        if (!targetId) return;
+        const targetSection = document.getElementById(targetId);
+        if (!targetSection) return;
+        targetSection.classList.remove("section-flash");
+        requestAnimationFrame(() => {
+          targetSection.classList.add("section-flash");
+          setTimeout(() => targetSection.classList.remove("section-flash"), 900);
         });
       });
+    });
 
-      document.getElementById("year").textContent = new Date().getFullYear();
-      lucide.createIcons();
-    </script>
-  </body>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    lucide.createIcons();
+  </script>
+</body>
+
 </html>
